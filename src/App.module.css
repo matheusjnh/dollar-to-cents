@@ -67,3 +67,23 @@
 .input::placeholder {
   color: #6b696a;
 }
+
+/* ======== < RESULT > ======== */
+
+.result {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  justify-content: center;
+}
+
+.resultCoin {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resultCoinImage {
+  width: 120px;
+}
