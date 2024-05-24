@@ -46,6 +46,8 @@ function App() {
     setCoins({ quarter, dime, nickel, penny });
   };
 
+  const inputClassName = `${style.input} ${error ? style.inputError : ''}`;
+
   return (
     <div className={style.layout}>
       <div className={style.header}>
@@ -56,11 +58,13 @@ function App() {
         <div className={style.inputContainer}>
           <span className={style.dollarSign}>$</span>
           <input
-            className={style.input}
+            className={inputClassName}
             type="text"
             placeholder="Dollars..."
             onInput={handleDollarInput}
           />
+
+          <span className={style.errorText}>{error}</span>
         </div>
 
         <div className={style.result}>

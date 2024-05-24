@@ -60,10 +60,27 @@
   padding: 10px 20px 10px 42px;
   color: inherit;
   border: none;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
   border-radius: 5px;
   font-family: inherit;
   font-size: 32px;
   outline: none;
+  transition: border 0.2s;
+}
+
+.input.inputError {
+  border-bottom-color: #f04343;
+  transition: border 0.2s;
+}
+
+.errorText {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  padding-top: 12px;
+  color: #f04343;
+  font-size: 18px;
 }
 
 .input::placeholder {
