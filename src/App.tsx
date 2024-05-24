@@ -65,7 +65,7 @@ function App() {
 
         <div className={style.result}>
           <div className={style.resultCoin}>
-            <span>Penny</span>
+            <h2 className={style.resultCoinName}>Penny</h2>
             <img
               className={style.resultCoinImage}
               src={penny}
@@ -76,7 +76,7 @@ function App() {
           </div>
 
           <div className={style.resultCoin}>
-            <span>Nickel</span>
+            <h2 className={style.resultCoinName}>Nickel</h2>
             <img
               className={style.resultCoinImage}
               src={nickel}
@@ -87,14 +87,14 @@ function App() {
           </div>
 
           <div className={style.resultCoin}>
-            <span>Dime</span>
+            <h2 className={style.resultCoinName}>Dime</h2>
             <img className={style.resultCoinImage} src={dime} alt="Dime coin" />
             <span className={style.resultCoinValue}>$0.10</span>
             <span className={style.resultCoinCount}>{coins.dime}x</span>
           </div>
 
           <div className={style.resultCoin}>
-            <span>Quarter</span>
+            <h2 className={style.resultCoinName}>Quarter</h2>
             <img
               className={style.resultCoinImage}
               src={quarter}
