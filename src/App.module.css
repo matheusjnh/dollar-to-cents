@@ -5,10 +5,11 @@
 .layout {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 200px 1fr;
+  grid-template-rows: 200px max-content;
   justify-items: center;
+  align-content: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   color: #40403e;
   background-color: #f2f0d5;
   font-family: 'Roboto', sans-serif;
