@@ -7,17 +7,32 @@ import quarter from './assets/quarter.png';
 import { useState } from 'react';
 
 function App() {
-  const [coins, setCoins] = useState({
-    penny: 0,
-    nickel: 0,
-    dime: 0,
-    quarter: 0,
-  });
+  const resetCoins = { penny: 0, nickel: 0, dime: 0, quarter: 0 };
+
+  const [coins, setCoins] = useState(resetCoins);
+
+  const [error, setError] = useState('');
 
   const handleDollarInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     const dollarValue = Number(event.target.value);
 
-    if (isNaN(dollarValue)) return;
+    if (isNaN(dollarValue)) {
+      setCoins(resetCoins);
+      return setError('Invalid number');
+    }
+
+    const decimalSignIndex = event.target.value.indexOf('.');
+
+    if (decimalSignIndex !== -1) {
+      const decimalValueString = event.target.value.slice(decimalSignIndex + 1);
+
+      if (decimalValueString.length > 2) {
+        setCoins(resetCoins);
+        return setError('Enter a number up to 2 decimal places');
+      }
+    }
+
+    setError('');
 
     let balance = Math.round(dollarValue * 100);
     const quarter = Math.floor(balance / 25);
